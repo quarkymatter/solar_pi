@@ -113,6 +113,4 @@ This repository is licensed under the [MIT License](LICENSE). Feel free to modif
 
 ## Contact
 
-For any inquiries or issues related to this repository, please contact the University of Utah's Solar Energy Research Center at [solar@utah.edu](mailto:solar@utah.edu).
-
-Happy monitoring and analyzing solar charge controller data!
+For any inquiries or issues related to this repository, please contact Whitney at [w.osborn@utah.edu](mailto:w.osborn@utah.edu).
