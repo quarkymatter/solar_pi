@@ -1,4 +1,4 @@
-### BETA README///FORMATTING PURPOSES ONLY
+### BETA /// FORMATTING PURPOSES ONLY
 
 
 # solar_pi
@@ -7,7 +7,7 @@
 
 # University of Utah Solar Charge Controller Data Repository
 
-This repository collects data from solar charge controllers and provides a script for retrieving and processing the data. The basis of this repository is the `solarshed.py` script.
+This repository collects data from solar charge controllers and provides a script for retrieving and processing the data. The basis of this repository is the `solarshed.py` script (https://github.com/corbinbs/solarshed).
 
 ## Introduction
 
@@ -15,55 +15,17 @@ The University of Utah Solar Charge Controller Data Repository aims to gather in
 
 ## Features
 
-- Collects data from solar charge controllers
+- Collects data from Renogy solar charge controllers
 
 - Retrieves data through the `solarshed.py` script with minor modifications 
-
-- Provides a simple and extensible framework for adding support for different charge controller models
 
 - Enables monitoring and analysis of solar system performance using Raspberry Pi local network
 
 ## Repository Structure
 
-The repository has the following structure:
-
-```
-
-.
-
-├── solarshed.py
-
-├── data/
-
-│   ├── controller1/
-
-│   │   ├── 2023-06-01.csv
-
-│   │   ├── 2023-06-02.csv
-
-│   │   └── ...
-
-│   ├── controller2/
-
-│   │   ├── 2023-06-01.csv
-
-│   │   ├── 2023-06-02.csv
-
-│   │   └── ...
-
-│   └── ...
-
-├── README.md
-
-└── .gitignore
-
-```
-
 - `solarshed.py`: The main script responsible for collecting data from the charge controllers.
 
-- `data/`: A directory containing subdirectories for each charge controller.
-
-- `controllerX/`: A directory for each charge controller, storing CSV files containing the data collected for each day.
+- `get_http_data.py`: A directory containing subdirectories for each charge controller.
 
 - `README.md`: This README file.
 
@@ -77,7 +39,7 @@ To collect data from solar charge controllers and retrieve the data using the `s
 
 ```bash
 
-git clone https://github.com/university-of-utah/solar-charge-controller-data.git
+git clone '__________'
 
 ```
 
@@ -89,9 +51,11 @@ pip install -r requirements.txt
 
 ```
 
-3. Configure the `solarshed.py` script to communicate with your specific charge controller(s). Refer to the documentation of your charge controller to understand the configuration parameters required in the script.
+3. If necessary, configure the `solarshed.py` script to communicate with your specific charge controller(s). Refer to the documentation of your charge controller to understand the configuration parameters required in the script. Default is set to Renogy Rover (works with Renogy Wanderer as well).
 
-4. Run the `solarshed.py` script to start collecting data from the charge controllers:
+4. Modify the variable 'SCRAPEDELAY' in 'server.py' to your preferred scrape intervals (seconds).
+
+5. Run the `solarshed.py` script on the Raspberry Pi through its local host ('http://ipaddress:port') to start collecting data from the charge controllers:
 
 ```bash
 
@@ -99,7 +63,8 @@ python solarshed.py
 
 ```
 
-5. The script will create a CSV file for each charge controller in the `data/controllerX/` directory, with the filename corresponding to the current date. The collected data will be stored in these files.
+5. The script will scrape data to the Pi's network at the set intervals.
+   
 
 ## Contributing
 
