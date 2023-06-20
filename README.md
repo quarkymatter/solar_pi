@@ -1,4 +1,4 @@
-### BETA /// 
+### \\\ BETA /// 
 
 
 # solar_pi
@@ -31,7 +31,6 @@ This Solar Charge Controller Data Repository aims to gather information from Ren
 
 - `README.md`: This README file.
 
-- `.gitignore`: Specifies the files and directories that should be ignored by Git (e.g., temporary files, logs).
 
 ## Getting Started
 
