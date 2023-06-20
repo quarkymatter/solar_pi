@@ -5,27 +5,29 @@
 
 
 
-# University of Utah Solar Charge Controller Data Repository
+# Solar Charge Controller Data Repository
 
-This repository collects data from solar charge controllers and provides a script for retrieving and processing the data. The basis of this repository is the `solarshed.py` script (https://github.com/corbinbs/solarshed).
+This repository collects data from solar charge controllers and provides a script for retrieving and processing the data. The basis of this repository uses `solarshed.py` (https://github.com/corbinbs/solarshed).
 
 ## Introduction
 
-The University of Utah Solar Charge Controller Data Repository aims to gather information from various solar charge controllers to monitor and analyze their performance. By collecting data from these devices, researchers and enthusiasts can gain insights into solar energy generation and optimize the performance of solar systems.
+This Solar Charge Controller Data Repository aims to gather information from Renogy solar charge controllers to monitor and analyze their performance in real-time using a network, as well as store data history.
 
 ## Features
 
-- Collects data from Renogy solar charge controllers
+- Collects data from Renogy solar charge controllers connected to Raspberry Pi via USB (using ethernet)
 
-- Retrieves data through the `solarshed.py` script with minor modifications 
+- Retrieves data through the `solarshed.py` script with minor modifications (see below)
 
 - Enables monitoring and analysis of solar system performance using Raspberry Pi local network
 
 ## Repository Structure
 
-- `solarshed.py`: The main script responsible for collecting data from the charge controllers.
+- `renogy_rover.py`: Pulls data from Renogy Rover charge controller via USB - also works with Renogy Wanderer.
 
-- `get_http_data.py`: A directory containing subdirectories for each charge controller.
+- 'server.py': Obtained from corbinbs/solarshed.server with adjusted 'SCRAPEDELAY' interval to 60 seconds.
+
+- `get_voltage_animated.py`: Returns an animated battery voltage time series.
 
 - `README.md`: This README file.
 
