@@ -5,7 +5,7 @@
 
 
 
-# Solar Charge Controller Data with Raspberry Pi Repository
+# Solar Charge Controller Data with Raspberry Pi
 
 This repository collects data from solar charge controllers and provides a script for retrieving and processing the data using a Raspberry Pi. The basis of this repository uses `solarshed.py` (https://github.com/corbinbs/solarshed).
 
