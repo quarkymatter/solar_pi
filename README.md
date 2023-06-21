@@ -31,17 +31,18 @@ This repository collects data from solar charge controllers and provides a scrip
 
 ## Getting Started
 
+Copy solar_pi extracted zip to the Pi using ssh:
+
 ```bash
 
 scp -r /path/to/local/folder pi@ipaddress:/home/pi/my_folder
 
-
 ```
-Example: 'scp -r /home/whitney/solar_pi tamember@155.101.22.137:/home/tamember/solar_pi'
+Ex. 'scp -r /home/whitney/solar_pi tamember@155.101.22.137:/home/tamember/solar_pi'
 
 
 
-Run the `server.py` script on the Raspberry Pi through its local host ('http://ipaddress:port') to start collecting data from the charge controllers:
+Run the `server.py` script:
 
 ```bash
 
