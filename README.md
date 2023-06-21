@@ -31,7 +31,7 @@ This repository collects data from solar charge controllers and provides a scrip
 scp -r /path/to/local/folder pi@ipaddress:/home/pi/my_folder
 
 ```
-Ex. 'scp -r /home/whitney/solar_pi tamember@155.101.22.137:/home/tamember/solar_pi'
+         Ex. 'scp -r /home/whitney/solar_pi tamember@155.101.22.137:/home/tamember/solar_pi'
 
 
 
