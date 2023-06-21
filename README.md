@@ -34,9 +34,13 @@ This Solar Charge Controller Data Repository aims to gather information from Ren
 
 ## Getting Started
 
-1. 'pip install solar_pi'
+1. ```bash
 
-2. Install the necessary dependencies. Make sure you have Python 3.x and pip installed, and then run:
+pip install solar_pi
+
+```
+
+4. Install the necessary dependencies. Make sure you have Python 3.x and pip installed, and then run:
 
 ```bash
 
