@@ -10,13 +10,6 @@
 This repository collects data from solar charge controllers and provides a script for retrieving, storing, and processing the data in real-time using a Raspberry Pi. The basis of this repository uses `solarshed.py` - https://github.com/corbinbs/solarshed
 
 
-## Features
-
-- Collects data from Renogy solar charge controllers connected to Raspberry Pi via USB (using ethernet)
-
-- Retrieves data through the `solarshed.py` script with minor modifications (see below)
-
-- Enables monitoring and analysis of solar system performance using Raspberry Pi local network
 
 ## Repository Structure
 
