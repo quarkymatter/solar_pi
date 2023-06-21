@@ -33,26 +33,13 @@ This repository collects data from solar charge controllers and provides a scrip
 
 ```bash
 
-pip install solar_pi
+scp -r /path/to/local/folder pi@ipaddress:/home/pi/my_folder
+
 
 ```
-Install the necessary dependencies. Make sure you have Python 3.x and pip installed, and then run:
+Example: 'scp -r /home/whitney/solar_pi tamember@155.101.22.137:/home/tamember/solar_pi'
 
-```bash
 
-pip install -r requirements.txt
-
-```
-
-If necessary, configure the `renogy_rover.py` script to communicate with your specific charge controller(s). Refer to the documentation of your charge controller to understand the configuration parameters required in the script. Default is set to Renogy Rover but works with Renogy Wanderer as well.
-
-Modify the variable 'SCRAPEDELAY' in 'server.py' to your preferred scrape interval (seconds).
-
-```bash
-
-nano server.py
-
-```
 
 Run the `server.py` script on the Raspberry Pi through its local host ('http://ipaddress:port') to start collecting data from the charge controllers:
 
@@ -62,7 +49,6 @@ python -m solar_pi.server
 
 ```
 
-The script will scrape data from controller and send to the Pi's network at the set intervals.
    
 
 ## Contributing
