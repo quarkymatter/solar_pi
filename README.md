@@ -11,11 +11,11 @@ This repository collects data from solar charge controllers and provides a scrip
 
 
 
-## Repository Structure
+## Repository Structure (currently written for 155.101.22.137)
 
 - `renogy_rover.py`: Pulls data from Renogy Rover charge controller via USB - also works with Renogy Wanderer. Obtained from corbinbs/solarshed.renogg_rover.py with no modifications.
 
-- `server.py`: Obtained from corbinbs/solarshed.server with adjusted 'SCRAPEDELAY' interval to 60 seconds. Currently written for 155.101.22.137.
+- `server.py`: Obtained from corbinbs/solarshed.server with adjusted 'SCRAPEDELAY' interval to 60 seconds.
 
 - `get_voltage_animated.py`: Returns an animated battery voltage time series.
 
