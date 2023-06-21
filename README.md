@@ -48,6 +48,9 @@ python -m solar_pi.server &
 3. Verify that the Pi is scraping data by visiting http://157.101.22.137:5000.
 4. To begin data displays, change to the appropriate directory on current computer and run 'get_voltage_animated.py'. Data should update on the graph every 60 seconds.
 
+
+![battery_voltage_cycle](https://github.com/quarkymatter/solar_pi/assets/132121881/6a0b6118-3742-498a-8d6f-c3b994b40360)
+
 ## Contact
 
 For any inquiries or issues related to this repository, please contact Whitney at [w.osborn@utah.edu](mailto:w.osborn@utah.edu).
