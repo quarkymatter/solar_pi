@@ -24,7 +24,7 @@ This repository collects data from solar charge controllers and provides a scrip
 
 ## Getting Started
 
-Download solar_pi zip to your computer, then copy the extracted zip to the Raspberry Pi using:
+1. Download solar_pi zip to your computer, then copy the extracted zip to the Raspberry Pi using:
 
 ```bash
 
@@ -33,7 +33,10 @@ scp -r /path/to/local/folder pi@ipaddress:/home/pi/my_folder
 ```
 Ex. 'scp -r /home/whitney/solar_pi tamember@155.101.22.137:/home/tamember/solar_pi'
 
-Change working directory to /solar_pi then run the `server.py` script:
+
+
+
+2. Change working directory to /solar_pi then run the `server.py` script:
 
 ```bash
 
