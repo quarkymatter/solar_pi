@@ -31,7 +31,7 @@ This repository collects data from solar charge controllers and provides a scrip
 
 ## Getting Started
 
-Copy solar_pi extracted zip to the Pi using ssh:
+Download solar_pi zip to your computer, then copy the extracted zip to the Raspberry Pi using:
 
 ```bash
 
