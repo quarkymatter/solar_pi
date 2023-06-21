@@ -34,13 +34,12 @@ This Solar Charge Controller Data Repository aims to gather information from Ren
 
 ## Getting Started
 
-1. ```bash
+```bash
 
 pip install solar_pi
 
 ```
-
-4. Install the necessary dependencies. Make sure you have Python 3.x and pip installed, and then run:
+Install the necessary dependencies. Make sure you have Python 3.x and pip installed, and then run:
 
 ```bash
 
@@ -48,11 +47,17 @@ pip install -r requirements.txt
 
 ```
 
-3. If necessary, configure the `renogy_rover.py` script to communicate with your specific charge controller(s). Refer to the documentation of your charge controller to understand the configuration parameters required in the script. Default is set to Renogy Rover but works with Renogy Wanderer as well.
+If necessary, configure the `renogy_rover.py` script to communicate with your specific charge controller(s). Refer to the documentation of your charge controller to understand the configuration parameters required in the script. Default is set to Renogy Rover but works with Renogy Wanderer as well.
 
-4. Modify the variable 'SCRAPEDELAY' in 'server.py' to your preferred scrape interval (seconds).
+Modify the variable 'SCRAPEDELAY' in 'server.py' to your preferred scrape interval (seconds).
 
-5. Run the `server.py` script on the Raspberry Pi through its local host ('http://ipaddress:port') to start collecting data from the charge controllers:
+```bash
+
+nano server.py
+
+```
+
+Run the `server.py` script on the Raspberry Pi through its local host ('http://ipaddress:port') to start collecting data from the charge controllers:
 
 ```bash
 
