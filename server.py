@@ -24,7 +24,7 @@ solar_current_gauge = Gauge('solarshed_solar_amperes', 'Solar Current')
 solar_power_gauge = Gauge('solarshed_solar_watts', 'Solar Power')
 
 # Start up the server to expose the metrics.
-start_http_server(5000)
+start_http_server(1000)
 
 while True:
     try:
