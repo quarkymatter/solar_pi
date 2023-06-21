@@ -45,7 +45,8 @@ python -m solar_pi.server &
 
 ```
 
-   
+3. Verify that the Pi is scraping data by visiting http://157.101.22.137:5000.
+4. To begin data displays, change to the appropriate directory on current computer and run 'get_voltage_animated.py'. Data should update on the graph every 60 seconds.
 
 ## Contact
 
