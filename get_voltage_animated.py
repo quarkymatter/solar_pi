@@ -127,9 +127,9 @@ def create_battery_percentage_bar_graph():
     battery_percentage = fetch_battery_percentage()
     if battery_percentage is not None:
         ax2.clear()
-        ax2.bar('Current', battery_percentage, color='#6495ED')
+        ax2.bar(battery_percentage, color='#6495ED')
         ax2.set_ylim(0, 100)
-	ax2.set_ylabel('
+	ax2.set_ylabel('%')
         ax2.set_title('Battery Percentage',fontsize=12)
     else:
         print("Failed to fetch battery percentage.")
