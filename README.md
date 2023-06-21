@@ -41,7 +41,7 @@ example. 'scp -r /home/whitney/solar_pi tamember@155.101.22.137:/home/tamember/s
 
 ```bash
 
-python -m solar_pi.server
+python -m solar_pi.server &
 
 ```
 
