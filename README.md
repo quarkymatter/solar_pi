@@ -43,16 +43,6 @@ python -m solar_pi.server
 
    
 
-## Contributing
-
-Contributions to this repository are welcome! If you would like to add functions or enhance the functionality of the included files, please feel free to submit a pull request.
-
-Before submitting a pull request, please ensure that your code adheres to the repository's coding standards and is well-documented.
-
-## License
-
-This repository is licensed under the [MIT License](LICENSE). Feel free to modify and distribute the code as needed.
-
 ## Contact
 
 For any inquiries or issues related to this repository, please contact Whitney at [w.osborn@utah.edu](mailto:w.osborn@utah.edu).
