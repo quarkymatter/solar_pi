@@ -1,3 +1,7 @@
+
+# Update 2023 June 23 - removed battery percentage
+
+
 import requests
 import time
 from datetime import datetime
@@ -7,8 +11,12 @@ import matplotlib.gridspec as gridspec
 from threading import Thread
 import matplotlib.animation as animation
 
+
 url = 'http://155.101.22.137:5000'
 refresh_interval = 60  # seconds
+
+
+
 
 #battery_percentage_data = []
 battery_voltage_data = []
@@ -66,20 +74,20 @@ def print_battery_voltage():
 
 def update_graph(i):
     timestamps, voltages = zip(*battery_voltage_data)
-    ax1.clear()
-    ax1.plot(timestamps, voltages)
-    ax1.set_ylabel('Voltage (V)')  
-    ax1.set_xlabel('Time (24-hour)')
-    ax1.set_xticklabels([])  # Remove x-axis tick labels
-    ax1.set_title('Battery Voltage')
+    ax.clear()
+    ax.plot(timestamps, voltages)
+    ax.set_ylabel('Voltage (V)')  
+    ax.set_xlabel('Time (24-hour)')
+    ax.set_xticklabels([])  # Remove x-axis tick labels
+    ax.set_title('Battery Voltage')
     plt.xticks(rotation=0)
     
     # Update x-axis tick labels
     if battery_voltage_data:
         first_timestamp = battery_voltage_data[0][0]
         last_timestamp = battery_voltage_data[-1][0]
-        ax1.set_xticks([first_timestamp, last_timestamp])
-        ax1.set_xticklabels([first_timestamp, last_timestamp])
+        ax.set_xticks([first_timestamp, last_timestamp])
+        ax.set_xticklabels([first_timestamp, last_timestamp])
 
     #create_battery_percentage_bar_graph()  # Update the battery percentage bar chart
 
@@ -102,6 +110,7 @@ plt.style.use('ggplot')
 
 # Create the figure and axes for the graphs
 fig, ax = plt.subplots()
+
 #gs = gridspec.GridSpec(nrows=1, 
                        #ncols=2, 
                        #figure=fig, 
@@ -118,7 +127,7 @@ fig, ax = plt.subplots()
 
 
 # Create an animation to update the battery voltage graph
-ani = animation.FuncAnimation(fig, update_graph, interval=refresh_interval*1000)
+ani = animation.FuncAnimation(fig, update_graph, interval=refresh_interval*1000,cache_frame_data=False)
 
 
 
@@ -138,9 +147,9 @@ ani = animation.FuncAnimation(fig, update_graph, interval=refresh_interval*1000)
 #create_battery_percentage_bar_graph()  # Update the battery percentage bar chart	
 	
 
+
 # Show the plot
 #plt.tight_layout()
 plt.show()
 
 
-                              
