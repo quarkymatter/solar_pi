@@ -1,4 +1,4 @@
-# Update 2023 June 23 - removed battery percentage
+## returns and updates battery voltage & solar voltage plot as well as battery temp ##
 
 
 import requests
@@ -14,59 +14,60 @@ import matplotlib.animation as animation
 url = 'http://155.101.22.137:5000'
 refresh_interval = 60  # seconds
 
-
 battery_voltage_data = []
+solar_voltage_data = []
 
 
-
-def fetch_battery_voltage():
+def fetch_voltage_data():
     response = requests.get(url)
     data = response.text
     for line in data.split('\n'):
         if line.startswith('solarshed_battery_volts'):
-            voltage = float(line.split()[1])
-            return voltage
-    return None
+            battery_voltage = float(line.split()[1])
+            battery_timestamp = datetime.now().strftime('%H:%M')
+            battery_voltage_data.append((battery_timestamp, battery_voltage))
+        elif line.startswith('solarshed_solar_volts'):
+            solar_voltage = float(line.split()[1])
+            solar_timestamp = datetime.now().strftime('%H:%M')
+            solar_voltage_data.append((solar_timestamp, solar_voltage))
+
 
 def update_data():
     while True:
-        battery_voltage = fetch_battery_voltage()
-        if battery_voltage is not None:
-            timestamp = datetime.now().strftime('%H:%M')
-            battery_voltage_data.append((timestamp, battery_voltage))
-        else:
-            print("Failed to fetch battery voltage.")
-        
-        time.sleep(refresh_interval)
-        
-
-
-
-def print_battery_voltage():
-    while not battery_voltage_data:
-        print("No battery votlage data available yet.")
+        fetch_voltage_data()
         time.sleep(refresh_interval)
 
-    print("Battery voltage data received")    
+
 
 def update_graph(i):
-    timestamps, voltages = zip(*battery_voltage_data)
-    ax.clear()
-    ax.plot(timestamps, voltages)
-    ax.set_ylabel('Voltage (V)')  
-    ax.set_xlabel('Time (HH:MM)')
-    ax.set_xticklabels([])  # Remove x-axis tick labels
-    ax.set_title('Battery Voltage')
-    plt.xticks(rotation=0)
+    battery_timestamps, battery_voltages = zip(*battery_voltage_data)
+    solar_timestamps, solar_voltages = zip(*solar_voltage_data)
     
-    # Update x-axis tick labels
-    if battery_voltage_data:
-        first_timestamp = battery_voltage_data[0][0]
-        last_timestamp = battery_voltage_data[-1][0]
-        ax.set_xticks([first_timestamp, last_timestamp])
-        ax.set_xticklabels([first_timestamp, last_timestamp])
+    ax.clear()
+    ax.plot(battery_timestamps, battery_voltages, label='Battery')
+    ax.plot(solar_timestamps, solar_voltages, label='Solar')
+    
+    ax.set_ylabel('Voltage (V)')
+    ax.set_xlabel('Time (HH:MM)')
+    ax.set_title('Voltage')
+    ax.legend()
+    plt.xticks(rotation=0)
+    # Add a subtitle to the graph
+    ax.text(0.5, 0.95, f'Battery Temperature: {temperature}°C', transform=ax.transAxes, ha='center')
 
-   
+    
+    if battery_voltage_data:
+        first_battery_timestamp = battery_voltage_data[0][0]
+        last_battery_timestamp = battery_voltage_data[-1][0]
+        ax.set_xticks([first_battery_timestamp, last_battery_timestamp])
+        ax.set_xticklabels([first_battery_timestamp, last_battery_timestamp])
+    
+    if solar_voltage_data:
+        first_solar_timestamp = solar_voltage_data[0][0]
+        last_solar_timestamp = solar_voltage_data[-1][0]
+        ax.set_xticks([first_solar_timestamp, last_solar_timestamp])
+        ax.set_xticklabels([first_solar_timestamp, last_solar_timestamp])
+
 
 
 # Start a thread to update the data
@@ -75,19 +76,27 @@ data_thread.daemon = True
 data_thread.start()
 
 
+# Temperature data
+
+battery_temp_data = []
+temperature = 0
+
+
+response = requests.get(url)
+data = response.text
+for line in data.split('\n'):
+        if line.startswith('solarshed_battery_temperature_celsius'):
+                temperature = float(line.split()[1])
+
 
 # Set the 'ggplot' style
 plt.style.use('ggplot')
 
-
-
 # Create the figure and axes for the graphs
 fig, ax = plt.subplots()
 
-
-
-# Create an animation to update the battery voltage graph
-ani = animation.FuncAnimation(fig, update_graph, interval=refresh_interval*1000,cache_frame_data=False)
+# Create an animation to update the voltage graph
+ani = animation.FuncAnimation(fig, update_graph, interval=refresh_interval*1000, cache_frame_data=False)
 
 
 # Show the plot
