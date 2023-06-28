@@ -24,12 +24,12 @@ def fetch_battery_voltage():
 def check_voltage():
     voltage = fetch_battery_voltage()
     if voltage is not None:
-        if lower_voltage <= voltage <= upper_voltage:
-            led.on()
-            print('ON  V = ', voltage)
-        else:
+        if lower_voltage >= voltage:
             led.off()
-            print('OFF  V = ', voltage)
+            print('OFF, V = ', voltage)
+        if upper_voltage <= voltage:
+            led.on()
+            print('ON, V = ', voltage)
 
 
 # Start refresh loop
