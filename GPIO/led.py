@@ -27,7 +27,7 @@ def check_voltage():
         if lower_voltage >= voltage:
             led.off()
             print('OFF, V = ', voltage)
-        if upper_voltage <= voltage:
+        else if upper_voltage <= voltage:
             led.on()
             print('ON, V = ', voltage)
 
