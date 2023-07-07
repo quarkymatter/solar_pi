@@ -6,9 +6,9 @@ import time
 led = LED(17)  # Change the GPIO pin number as per setup
 url = 'http://155.101.22.137:5000'
 
-# Define upper and lower limits 
-upper_voltage = 14.2
-lower_voltage = 12.8
+# Define upper and lower limits, change as necessary 
+upper_voltage = 13.5
+lower_voltage = 12.5
 
 # Function to fetch the battery voltage from the data source
 def fetch_battery_voltage():
@@ -27,7 +27,7 @@ def check_voltage():
         if lower_voltage >= voltage:
             led.off()
             print('OFF, V = ', voltage)
-        else if upper_voltage <= voltage:
+        elif upper_voltage <= voltage:
             led.on()
             print('ON, V = ', voltage)
 
