@@ -26,7 +26,7 @@ python server.py &
 5. To begin plotted display, run 'get_voltage_animated.py' on desktop computer. Voltage will update on the graph every 60 seconds.
 
 ![cycles24v](https://github.com/quarkymatter/solar_pi/assets/132121881/cddf6c51-5130-4796-87ce-a2b69106a043)
-
+Plotted battery voltage cycle over several hours for 24V system.
 
 
 ## Contact
