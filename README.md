@@ -7,6 +7,7 @@ This repository collects data from solar charge controllers and provides a scrip
 
 ![image](https://github.com/quarkymatter/solar_pi/assets/132121881/f9b4f8ec-2104-494c-bd03-22f038445ad3)
 
+![solar-test-2](https://github.com/quarkymatter/solar_pi/assets/132121881/8b9270a2-e558-4062-996d-e434f0d86eb6)
 
 
 ## Getting Started
