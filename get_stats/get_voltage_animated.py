@@ -1,4 +1,4 @@
-## returns and updates battery voltage & solar voltage plot as well as battery temp ##
+## returns and updates battery voltage w/ max and min as upper and lower limits ##
 
 
 import requests
