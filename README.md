@@ -25,8 +25,9 @@ python server.py &
 4. Run led.py concurrently on the Pi to control power to the load via relay. Make suer to set the preferred upper and lower voltage limits within the script. 
 5. To begin plotted display, run 'get_voltage_animated.py' on desktop computer. Voltage will update on the graph every 60 seconds.
 
+![cycles24v](https://github.com/quarkymatter/solar_pi/assets/132121881/cddf6c51-5130-4796-87ce-a2b69106a043)
 
-![battery_voltage_cycle](https://github.com/quarkymatter/solar_pi/assets/132121881/6a0b6118-3742-498a-8d6f-c3b994b40360)
+
 
 ## Contact
 
